@@ -1,12 +1,8 @@
-import sys
-import os
-
-sys.path.append(os.path.join(os.path.dirname(__file__), 'code'))
-
 import utils
 from dataset import get_data, get_generators
 from model import build_architecture
 from train import run_training
+from evaluate import evaluate_model
 
 def main():
     print("Initializing Project Pipeline...")
@@ -21,11 +17,17 @@ def main():
     model_arch.summary()
 
     print("Starting training module...")
+
     model, history = run_training(train_gen, val_gen)
 
     print("Training process completed.")
     print(f"Final Training Accuracy: {history.history['accuracy'][-1]:.4f}")
     print(f"Final Validation Accuracy: {history.history['val_accuracy'][-1]:.4f}")
+
+
+    print("Generating evaluation results and plots...")
+    evaluate_model()
+    print("Pipeline Finished Successfully!")
 
 if __name__ == "__main__":
     main()

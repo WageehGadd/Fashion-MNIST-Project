@@ -17,8 +17,18 @@ NUM_CLASSES = 10
 SEED = 42
 
 def get_data():
-    train_df = pd.read_csv('../data/fashion-mnist_train.csv')
-    test_df = pd.read_csv('../data/fashion-mnist_test.csv')
+    # train_df = pd.read_csv('../data/fashion-mnist_train.csv')
+    # test_df = pd.read_csv('../data/fashion-mnist_test.csv')
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+    train_path = os.path.join(base_dir, 'data', 'fashion-mnist_train.csv')
+
+    test_path = os.path.join(base_dir, 'data', 'fashion-mnist_test.csv')
+
+    train_df = pd.read_csv(train_path)
+
+    test_df = pd.read_csv(test_path)
+
 
     y_train_raw = train_df['label'].values
     y_test_raw = test_df['label'].values
@@ -75,4 +85,4 @@ def resize_and_stack(images, target_size=(85, 85)):
         processed_images[i] = np.stack((img_resized,) * 3, axis=-1)
     return processed_images
 
-get_data()
+# get_data()

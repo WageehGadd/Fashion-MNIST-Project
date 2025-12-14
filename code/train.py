@@ -1,4 +1,5 @@
 import os
+import pickle
 import sys
 from tensorflow.keras import optimizers, callbacks
 
@@ -29,5 +30,12 @@ def run_training(train_gen, val_gen):
         callbacks=cb_list,
         verbose=1
     )
+
+    # Save training history
+    history_path = os.path.join(utils.MODEL_DIR, 'training_history.pkl')
+    with open(history_path, 'wb') as f:
+        pickle.dump(history, f)
+    print(f"Training history saved to {history_path}")
+
 
     return model, history

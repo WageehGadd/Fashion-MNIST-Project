@@ -1,0 +1,41 @@
+======================================================================
+SAMPLE PREDICTIONS ANALYSIS
+======================================================================
+
+First 20 test samples:
+Sample   True            Pred            Confidence   Match 
+----------------------------------------------------------------------
+0        T-shirt/top     T-shirt/top     0.9990       PASS  
+1        Trouser         Trouser         1.0000       PASS  
+2        Pullover        Pullover        0.9735       PASS  
+3        Pullover        Pullover        0.8744       PASS  
+4        Dress           Dress           0.9838       PASS  
+5        Pullover        Shirt           0.7807       FAIL  
+6        Bag             Bag             0.9993       PASS  
+7        Shirt           Shirt           0.5078       PASS  
+8        Sandal          Sandal          1.0000       PASS  
+9        T-shirt/top     T-shirt/top     1.0000       PASS  
+10       Dress           Dress           0.9988       PASS  
+11       Coat            Coat            0.6697       PASS  
+12       Coat            Coat            0.8822       PASS  
+13       Shirt           Shirt           0.9998       PASS  
+14       Bag             Bag             1.0000       PASS  
+15       Sandal          Sandal          1.0000       PASS  
+16       Shirt           Shirt           0.9954       PASS  
+17       Dress           Dress           0.9999       PASS  
+18       Shirt           Shirt           0.9946       PASS  
+19       Coat            Coat            0.9821       PASS  
+
+Accuracy on these 20 samples: 19/20 = 95.0%
+
+Prediction distribution across classes:
+  Class 0 (T-shirt/top): 2 predictions
+  Class 1 (Trouser): 1 predictions
+  Class 2 (Pullover): 2 predictions
+  Class 3 (Dress): 3 predictions
+  Class 4 (Coat): 3 predictions
+  Class 5 (Sandal): 2 predictions
+  Class 6 (Shirt): 5 predictions
+  Class 7 (Sneaker): 0 predictions
+  Class 8 (Bag): 2 predictions
+  Class 9 (Ankle boot): 0 predictions
